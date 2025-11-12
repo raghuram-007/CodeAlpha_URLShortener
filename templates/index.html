@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <h2>🔗 Simple URL Shortener</h2>
+    <div class="message" id="message">Link copied to clipboard!</div>
+    <input type="text" id="longUrl" placeholder="Enter your long URL here" />
+    <button onclick="shortenURL()">Shorten</button>
+  </div>
+
+  <div id="cardsContainer"></div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      padding: 70px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .message {
+      background: #10b981;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+      animation: fadeInOut 2.5s ease-in-out;
+      font-weight: 500;
+      box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      20%, 80% { opacity: 1; }
+    }
+
+    .input-group {
+      position: relative;
+      margin: 25px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: #f8fafc;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      background: #fff;
+    }
+
+    button {
+      padding: 14px 28px;
+      border: none;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #cardsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .url-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #f1f5f9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .url-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+    }
+
+    .url-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .url-card h3 {
+      color: #1e293b;
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .url-card p {
+      color: #64748b;
+      margin-bottom: 8px;
+      font-size: 14px;
+      word-break: break-all;
+    }
+
+    .url-card a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 15px;
+      word-break: break-all;
+    }
+
+    .url-card a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    .url-card button {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      margin-top: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      width: auto;
+      display: inline-block;
+    }
+
+    .url-card button:hover {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #64748b;
+    }
+
+    .empty-state p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      h2 {
+        font-size: 24px;
+      }
+      
+      #cardsContainer {
+        gap: 15px;
+      }
+      
+      .url-card {
+        max-width: 100%;
+      }
+    }
